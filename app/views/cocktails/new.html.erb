@@ -1,0 +1,14 @@
+
+<h1>Nouveau cocktail</h1>
+
+<%= render 'form', cocktail: @cocktail %>
+
+
+<div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>

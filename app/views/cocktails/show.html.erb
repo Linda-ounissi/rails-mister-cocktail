@@ -1,0 +1,11 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+    <h1><%= @cocktail.name %></h1>
+<br>
+<h2>Ingredients</h2>
+
+<% @cocktail.ingredients.each do |ingredient| %>
+  <%= ingredient.name %>
+<% end %>
+
