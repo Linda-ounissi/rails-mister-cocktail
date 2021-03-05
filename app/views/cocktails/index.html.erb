@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
-
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
 <h1>Your's Cocktails</h1>
 <table>
   <thead>
@@ -14,7 +27,7 @@
       <tr>
         <td><%= cocktail.name %></td>
         <td><%= link_to 'show' , cocktail %></td>
-        <td><%= link_to 'Create a new cocktail' , new_cocktail_dose_path %></td>
+
 
       </tr>
     <% end %>
@@ -22,3 +35,4 @@
 </table>
 
 <br>
+<%=  link_to" Create new Cocktails", new_cocktail_path %>

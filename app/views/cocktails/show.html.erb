@@ -6,6 +6,39 @@
 <h2>Ingredients</h2>
 
 <% @cocktail.ingredients.each do |ingredient| %>
-  <%= ingredient.name %>
-<% end %>
+  <li><%= ingredient.name %></li>
+  <% end %>
+  <div class="container">
+  <h4>Ajouter des ingrédients</h4>
+
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :ingredient_id, collection: @ingredients %>
+  <%= f.input :description, label: 'Description', error: 'La description est obligatoire' %>
+  <%= f.button :submit %>
+  <% end %>
+
+</div>
+
+
+<br>
+<form method="get" action="edit">
+    <button type="submit">Add ingredient</button>
+</form>
+
+  <h2>Description</h2>
+
+<% @cocktail.doses.each do |dose| %>
+  <li><%= dose.description %><%= dose.ingredient.name %></li>
+    <%= link_to "<i class=\"fas fa-pencil-alt\"></i>".html_safe, new_or_edit_dose_path(@cocktail.id, dose.id) %>
+    <%= link_to "<i class=\"far fa-trash-alt\"></i>".html_safe, dose_path(dose.id), method: :delete, data: {confirm: "Are you sure?"} %>
+    </li>
+  <% end %>
+  </ul>
+<br>
+  <%= link_to "Back", cocktails_path %>
+
+
+
+<%= link_to "Go back to cocktails", cocktails_path %>
+
 
