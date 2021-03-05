@@ -1,38 +1,65 @@
 <p id="notice"><%= notice %></p>
-<ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Disabled</a>
-  </li>
-</ul>
-<h1>Your's Cocktails</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'show' , cocktail %></td>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
 
-      </tr>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<br>
+<h1>TIME TO DRINK</h1>
+<div><img src="https://media.lesechos.com/api/v1/images/view/5cdd48458fe56f30424c5a58/1280x720-webp/ecwe00128018-1.webp" alt="">
+
+</div>
+<body>
+
+
+
+
+      <h1>Yours Creations</h1>
+<div class="cards">
+  <% @cocktails.each do |cocktail| %>
+     <%= link_to  cocktail_path(cocktail) do  %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://ns328286.ip-37-187-113.eu/ew/wallpapers/800x480/14913_800x480.jpg)">
+       <%= cocktail.name %>
+
+    </div>
     <% end %>
-  </tbody>
-</table>
+
+    <% end %>
+
+</div>
+
+
+
+
+
+
+
 
 <br>
 <%=  link_to" Create new Cocktails", new_cocktail_path %>
+</body>
